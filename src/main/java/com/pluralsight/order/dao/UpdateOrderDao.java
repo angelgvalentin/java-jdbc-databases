@@ -31,7 +31,7 @@ public class UpdateOrderDao {
     public int updateOrderStatus(ParamsDto paramsDto) {
         int numberResults = 0;
 
-        try (Connection con = null;
+        try (Connection con = database.getConnection();
              PreparedStatement ps = createPreparedStatement(con, paramsDto)
         ) {
 
